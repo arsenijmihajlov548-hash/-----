@@ -1,0 +1,608 @@
+@media (max-width:1536px) {
+    .main {
+        margin-top: 20px;
+        padding: 0px 12.625%;
+    }
+
+    .header {
+        padding: 5px 12.625%;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); 
+
+    }
+
+    .footer {
+        padding: 0 12.625%; 
+    }
+
+    .li-header-2 {
+        margin-right: 15px;
+        font-size: 18px;
+    }
+
+}
+
+@media (max-width:1440px) {
+    .ul-technology li{
+        font-size: 22px;
+    }
+
+    .img-technology {
+        max-width: 500px;
+        margin-right: 20px;
+    }
+
+    .li-header-2 {
+        margin-right: 10px;
+        font-size: 18px;
+    }
+
+}
+
+@media (max-width:1366px) {
+    .nav-link {
+        font-size: 24px;
+    }
+}
+
+@media (max-width:1280px) {
+    .main {
+        margin-top: 20px;
+        padding: 0px 10.625%;
+    }
+
+    .header {
+        padding: 5px 10.625%;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); 
+    }
+
+    .footer {
+        padding: 0 10.625%; 
+    }
+
+    .img-technology {
+        max-width: 400px;
+        margin-right: 20px;
+    }
+}
+
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+    .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        position: relative;
+    }
+
+    .header-1 {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0;
+        gap: 8px;
+    }
+
+    /* Кнопка бургера в тематике сайта (темная с желтыми линиями) */
+    .burger-menu {
+        display: block;
+        z-index: 10000;
+        background-color: var(--dark-color); /* Черный вместо розового */
+        border: 2px solid var(--accent-color); /* Желтый кант */
+        border-radius: 6px;
+        transition: background-color 0.3s ease;
+    }
+
+    /* Цвет линий внутри бургера */
+    .burger-menu span {
+        position: absolute;
+        width: 40px;
+        height: 4px;
+        background-color: var(--accent-color); /* Желтые линии */
+        border-radius: 2px;
+        left: 8px;
+        top: 26px;
+        transition: transform .4s, opacity 0ms, background-color .4s;
+    }
+
+    /* Когда меню открыто — кнопка становится ярче, а крестик белым */
+    .header.open .burger-menu {
+        background-color: var(--accent-color);
+        border-color: var(--dark-color);
+    }
+    .header.open .burger-menu span {
+        background-color: var(--dark-color);
+    }
+
+    .header.open .burger-menu span:nth-child(1) {
+        transform: translateY(0) rotate(45deg);
+    }
+    .header.open .burger-menu span:nth-child(2) {
+        opacity: 0;
+    }
+    .header.open .burger-menu span:nth-child(3) {
+        transform: translateY(0) rotate(-45deg);
+    }
+    .burger-menu span:nth-child(1) {
+        transform: translateY(-12px);
+    }
+    .burger-menu span:nth-child(3) {
+        transform: translateY(12px);
+    }
+
+    /* Обновленное стильное меню */
+    .header-2 {
+        position: fixed;
+        top: 0;
+        right: -100%; 
+        width: 320px;
+        height: 100dvh;
+        background-color: #1a1a1a; /* Темный фон для контраста */
+        padding: 90px 25px 30px;
+        box-sizing: border-box;
+        z-index: 9999;
+        transition: right 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Спецтехника уйдет вниз */
+    }
+
+    .header.open .header-2 {
+        right: 0;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5); /* <-- ПЕРЕНЕСИТЕ СТРОКУ СЮДА */
+    }
+
+    .header.open .header-2 {
+        right: 0; 
+    }
+
+    /* Перестраиваем список товаров */
+    .ul-header-2 {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0; /* Убираем стандартные зазоры, делаем через отступы линий */
+        width: 100%;
+    }
+
+    /* Пункты товаров с разделительными линиями */
+    .li-header-2 {
+        width: 100%;
+        margin-right: 0;
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Тонкая линия */
+    }
+    .li-header-2::after {
+        display: none; /* Отключаем старый десктопный ховер-эффект */
+    }
+
+    /* Ссылки товаров в меню */
+    .li-header-2 .nav-link {
+        color: #ffffff;
+        font-size: 22px;
+        text-decoration: none;
+        display: block;
+        transition: color 0.2s ease, padding-left 0.2s ease;
+    }
+    /* Эффект при нажатии/наведении */
+    .li-header-2 .nav-link:hover {
+        color: var(--accent-color);
+        padding-left: 5px; /* Ссылка слегка сдвигается вправо */
+    }
+
+    /* Выделяем "Услуги СпецТехники" внизу меню */
+    .p-header-2 {
+        margin-top: auto;
+        padding: 0;
+        width: 100%;
+    }
+    .p-header-2::after {
+        display: none;
+    }
+    .p-header-2 .spec-link {
+        display: block;
+        text-align: center;
+        background-color: transparent;
+        border: 2px solid var(--accent-color);
+        color: var(--accent-color) !important;
+        padding: 12px;
+        border-radius: 6px;
+        font-size: 22px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .p-header-2 .spec-link:hover {
+        background-color: var(--accent-color);
+        color: var(--dark-color) !important;
+    }
+
+    .materials {
+        flex-direction: column;
+        max-width: 550px; /* Ограничиваем ширину, чтобы на планшете карточка не была огромной */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Растягиваем картинку на всю ширину карточки */
+    .img-sheben {
+        max-width: 100%;
+        width: 100%;
+        margin-right: 0;
+        height: 250px; /* Фиксируем высоту, чтобы все карточки были одинаковыми */
+        object-fit: cover; /* Картинка аккуратно заполняет блок, не сжимаясь */
+    }
+
+    /* Корректируем внутренние отступы текста */
+    .sheben-text {
+        padding: 20px;
+    }
+
+    /* Смещаем кнопку "Приобрести" по центру или оставляем справа */
+    .div-button {
+        align-self: flex-end; 
+        margin-top: 15px;
+    }
+
+    .technology {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+        margin-top: 30px; /* Немного уменьшаем отступ сверху на планшетах */
+    }
+
+    /* Растягиваем картинку спецтехники на всю ширину блока */
+    .img-technology {
+        max-width: 100%;
+        width: 100%;
+        margin-right: 0; /* Убираем правый отступ, так как текст теперь внизу */
+        margin-bottom: 20px; /* Добавляем отступ снизу до текста */
+        height: auto;
+        border-radius: 6px;
+    }
+
+    /* Выравниваем текстовый блок */
+    .technology-text {
+        width: 100%;
+    }
+
+    /* Немного уменьшаем заголовки техники для баланса */
+    .h2-technology {
+        font-size: 26px;
+        margin-bottom: 15px;
+        text-align: center; /* Центрируем заголовок на мобильных */
+    }
+
+    /* Настраиваем списки преимуществ */
+    .ul-technology {
+        padding-left: 20px; /* Возвращаем отступ для маркеров списка */
+    }
+    
+    .ul-technology li {
+        font-size: 20px; /* Комфортный размер шрифта для планшета */
+        margin-bottom: 8px;
+    }
+
+    .footer-container {
+        flex-direction: column; 
+        align-items: center;
+        text-align: center; /* Центрируем весь текст */
+        gap: 40px; /* Делаем хорошие отступы между блоками */
+        padding: 40px 20px;
+    }
+
+    /* 2. Сбрасываем жесткие десктопные ограничения флексов */
+    .footer-block {
+        flex: none;
+        width: 100%; /* Каждый блок занимает всю ширину */
+        max-width: 450px; /* Чтобы текст не размазывался слишком широко */
+    }
+
+    /* 3. Сбрасываем ограничение ширины для блока "О нас" */
+    .footer-about {
+        max-width: 100%;
+    }
+
+    /* 4. Центрируем желтую полоску под всеми заголовками */
+    .footer-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* 5. Центрируем элементы внутри списков навигации */
+    .footer-ul {
+        align-items: center;
+    }
+
+    /* 6. Центрируем контакты, иконки и телефон */
+    .footer-contacts {
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    
+    body {
+        font-size: 18px;
+    }
+
+    .main {
+        margin-top: 100px !important;
+    }
+
+    .materials {
+        scroll-margin-top: 85px;
+    }
+
+    .h1-section-machinery {
+        scroll-margin-top: 85px;
+    }
+
+    .header, .main, .footer {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    .header {
+        position: fixed !important; /* Меняем sticky на fixed — теперь она точно никуда не уедет */
+        top: 0;
+        left: 0;
+        width: 100%;
+        box-sizing: border-box;
+        z-index: 9999;
+        background-color: #ffffff;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 15px !important;
+        padding-bottom: 15px !important;
+    }
+
+    .header.header-scrolled {
+        padding-top: 4px !important;
+        padding-bottom: 4px !important;
+    }
+
+    .header-1 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+        margin-bottom: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .block-1 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .logotype {
+        height: 35px;
+        width: 35px;
+        margin-right: 8px;
+    }
+
+    .h1-header-1 {
+        font-size: 20px;
+        word-wrap: break-word;
+        white-space: normal;
+    }
+
+    .block-2 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .telegram, .max {
+        max-width: 28px;
+        max-height: 28px;
+        margin: 0 !important;
+    }
+
+    .phone h1 {
+        font-size: 18px;
+        word-wrap: break-word;
+        white-space: normal;
+    }
+
+    .h1-sheben {
+        font-size: 22px;
+        text-align: center;
+        word-wrap: break-word;
+        white-space: normal;
+    }
+
+    .burger-menu {
+        width: 50px;
+        height: 50px;
+        display: block;
+        z-index: 10000;
+        background-color: var(--dark-color);
+        border: 2px solid var(--accent-color);
+        border-radius: 6px;
+    }
+
+    .burger-menu span {
+        width: 34px;
+        left: 6px;
+        top: 23px;
+    }
+
+    .burger-menu span:nth-child(1) { transform: translateY(-10px); }
+    .burger-menu span:nth-child(3) { transform: translateY(10px); }
+
+    /* Исправленный блок меню для телефонов — уезжает направо */
+    .header-2 {
+        position: fixed;
+        top: 0;
+        right: -100%; 
+        width: 100%; /* На телефонах открывается во весь экран */
+        height: 100dvh;
+        background-color: #1a1a1a;
+        padding: 90px 25px 30px;
+        box-sizing: border-box;
+        z-index: 9999;
+        transition: right 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    /* Логика открытия меню */
+    .header.open .header-2 {
+        right: 0;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Вертикальный список ссылок внутри открытого меню */
+    .ul-header-2 {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        width: 100%;
+    }
+
+    .li-header-2 {
+        width: 100%;
+        margin-right: 0;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .li-header-2::after {
+        display: none;
+    }
+
+    /* Цвет ссылок в меню, чтобы они читались на черном */
+    .mobile-menu-ul li a, .li-header-2 .nav-link {
+        font-size: 22px;
+        color: #ffffff;
+        text-decoration: none;
+        display: block;
+    }
+
+    .p-header-2 {
+        margin-top: auto;
+        padding: 0;
+        width: 100%;
+    }
+
+    .p-header-2::after {
+        display: none;
+    }
+
+    /* Кнопка спецтехники в самом низу меню */
+    .p-header-2 .spec-link {
+        display: block;
+        text-align: center;
+        border: 2px solid var(--accent-color);
+        color: var(--accent-color) !important;
+        padding: 10px;
+        border-radius: 6px;
+        font-size: 22px;
+        text-decoration: none;
+    }
+
+    .materials {
+        flex-direction: column;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .img-sheben {
+        max-width: 100%;
+        width: 100%;
+        height: 200px;
+        margin-right: 0;
+    }
+
+    .sheben-text {
+        padding: 15px;
+    }
+
+    .ul-technology li {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    .div-button {
+        width: 100%;
+        height: 50px;
+        margin-top: 15px;
+        align-self: center;
+    }
+
+    .button-buy {
+        font-size: 20px;
+    }
+
+    .h1-section-machinery {
+        font-size: 26px;
+        margin-top: 20px;
+    }
+
+    .technology {
+        flex-direction: column;
+        padding: 12px;
+        margin-top: 20px;
+    }
+
+    .img-technology {
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .h2-technology {
+        font-size: 22px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+        padding: 30px 0;
+    }
+
+    .footer-block {
+        width: 100%;
+    }
+
+    .footer-title {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .footer-text {
+        font-size: 16px;
+    }
+
+    .footer-link {
+        font-size: 18px;
+    }
+
+    .footer-phone {
+        font-size: 22px;
+    }
+
+    .footer-bottom p {
+        font-size: 14px;
+    }
+}
